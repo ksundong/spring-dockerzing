@@ -17,3 +17,11 @@ mkdir -p build/dependency && (cd build/dependency; jar -xf ../libs/*.jar)
 Entrypoint에 class를 직접 적어주는 것은 간접 참조보다 훨씬 빨리 실행이 가능하기 때문에 사용.
 
 BOOT-INF에 관련된 정보들이 다 들어있다.
+
+## OCI Image 빌드하기
+
+spring boot는 OCI Image를 빌드하는 방법을 제공한다. OCI는 컨테이너 기술의 표준과 같은 개념인듯.
+
+```
+./gradlew bootBuildImage --imageName=springio/gs-spring-boot-docker
+```
