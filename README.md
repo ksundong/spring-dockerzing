@@ -25,3 +25,11 @@ spring boot는 OCI Image를 빌드하는 방법을 제공한다. OCI는 컨테�
 ```
 ./gradlew bootBuildImage --imageName=springio/gs-spring-boot-docker
 ```
+
+## 프로필 사용하기
+
+```
+docker run -e "SPRING_PROFILES_ACTIVE=prod" -p 8080:8080 -t springio/gs-spring-boot-docker
+```
+
+이런식으로 간단하게 적용할 수 있다.
