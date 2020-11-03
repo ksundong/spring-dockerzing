@@ -33,3 +33,13 @@ docker run -e "SPRING_PROFILES_ACTIVE=prod" -p 8080:8080 -t springio/gs-spring-b
 ```
 
 이런식으로 간단하게 적용할 수 있다.
+
+## 디버깅 하는 방법
+
+```
+docker run -e "JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n" -p 8080:8080 -p 5005:5005 -t springio/gs-spring-boot-docker
+```
+
+이렇게 실행하면 Intellij에서 Remote로 붙을 수 있다.
+
+![IntelliJ에서 설정하는 방법](https://i.imgur.com/XcW0fcK.png)
